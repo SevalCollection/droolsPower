@@ -1,0 +1,23 @@
+template header
+
+metaRule
+metaCondition
+metaActive
+
+package com.seval.rr
+
+import com.seval.rr.*;
+import com.seval.rr.util.DroolsUtil;
+import org.apache.commons.lang.StringUtils;
+
+template "trade-data-validation-rules"
+
+rule "@{metaRule}"
+
+when
+  $trade : Trade("@{metaActive}" == "Y" && !(@{metaCondition}))
+then
+   System.out.println("@{metaRule} ...failed for record = " + $trade);
+end
+
+end template
