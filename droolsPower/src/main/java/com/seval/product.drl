@@ -1,0 +1,30 @@
+template header
+id
+normalDiscountRate
+productType
+bulkDiscountQty
+bulkDiscountRate
+
+package com.seval
+
+import com.seval.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+
+template "product-discount"
+
+
+rule "@{id}"
+    when $item : OrderItem(type == OrderItem.PROD_TYPE.@{productType});
+
+    then
+      BigDecimal disc = new BigDecimal("@{normalDiscountRate}");
+      if($item.getUnits() >= @{bulkDiscountQty}){
+           disc = disc.add(BigDecimal.valueOf(@{bulkDiscountRate}));
+      }
+    
+      $item.setEffectiveDiscountRate(disc);
+      $item.setDiscountedUnitPrice($item.getUnitPrice().multiply(BigDecimal.ONE.subtract(disc)));
+end
+end template
