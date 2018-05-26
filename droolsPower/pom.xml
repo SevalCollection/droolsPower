@@ -13,7 +13,7 @@
   <url>http://www.seval.com</url>
 
   <properties>
-     <drools.version>5.3.1.Final</drools.version>
+     <drools.version>5.5.0.Final</drools.version>
   </properties>
   
   <dependencies>
@@ -47,6 +47,11 @@
       <artifactId>drools-spring</artifactId>
       <version>${drools.version}</version>
     </dependency>
+    <dependency>
+	 	<groupId>org.drools</groupId>
+	 	<artifactId>drools-decisiontables</artifactId>
+	 	<version>${drools.version}</version>
+	</dependency>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
