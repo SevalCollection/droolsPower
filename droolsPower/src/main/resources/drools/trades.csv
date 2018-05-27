@@ -1,3 +1,3 @@
 tradeId, tradeDate, symbol, price, volume, totalPrice, buyerId, sellerId
-1, 20150802,BHP,79.5000,1200,95400.00,ABC,XYZ
+1, 20150802,BHP,79.5000,1200,95400.00,ABC,ABC
 2, 20150604,NAB,55.4550,100,5545.50,PQR,IJK

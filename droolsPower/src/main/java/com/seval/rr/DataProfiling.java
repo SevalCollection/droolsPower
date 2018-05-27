@@ -69,7 +69,7 @@ public class DataProfiling {
 
         ResourceFactory.newClassPathResource(aDrlName).getInputStream(), aStartRow, aStartCol);
 
-        System.out.println(drlstr);
+        //System.out.println(drlstr);
         aKbuilder.add(new ByteArrayResource(drlstr.getBytes()), ResourceType.DRL);
         Iterator<KnowledgeBuilderError> errors = aKbuilder.getErrors().iterator();
 
